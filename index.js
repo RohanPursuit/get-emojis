@@ -1,6 +1,8 @@
 const server = require("express")()
 const emojis = require('./emojis.js')
 
+server.use(cors())
+
 server.get("/search/:term", (request, response) => {
     const {term} = request.params
     const foundEmojis = emojis.filter((emoji) => {
