@@ -4,6 +4,7 @@ const emojis = require('./emojis.js')
 // MIDDLEWARE
 server.use(cors())
 
+// ROUTES
 server.get("/search/:term", (request, response) => {
     const {term} = request.params
     const foundEmojis = emojis.filter((emoji) => {
