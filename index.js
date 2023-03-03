@@ -1,5 +1,6 @@
 const server = require("express")()
 const emojis = require('./emojis.js')
+const cors = require("cors");
 
 // MIDDLEWARE
 server.use(cors())
