@@ -10,12 +10,10 @@ server.get("/search/:term", (request, response) => {
     const {term} = request.params
     const foundEmojis = emojis.filter((emoji) => {
         if(term.length === 1 && emoji.letter === term){
-            console.log(emoji)
             return true
         }
 
         if(term.length > 1 && emoji.name.includes(term)){
-            console.log(emoji)
             return true
         }
     }).sort((a, b) => {
@@ -25,7 +23,7 @@ server.get("/search/:term", (request, response) => {
         if(a.name > b.name){
             return 1
         }
-    })
+    })[0] || []
     response.send(foundEmojis)
 })
 
