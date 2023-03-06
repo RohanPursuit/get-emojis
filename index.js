@@ -10,6 +10,7 @@ server.get("/search/:term", (request, response) => {
     const {term} = request.params
     const foundEmojis = emojis.filter((emoji) => {
         if(term.length === 1 && emoji.letter === term){
+            console.log(emoji)
             return true
         }
 
