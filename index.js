@@ -28,6 +28,13 @@ server.get("/search/:term", (request, response) => {
     response.send(foundEmoji)
 })
 
+server.get("/category/:term", (request, response) => {
+    const {term} = request.params
+    const foundEmojis = emojis.filter((emoji) => emoji.category === term)
+
+    response.send(foundEmojis)
+})
+
 server.get("/search", (request, response) => {
     response.send(emojis)
 })
